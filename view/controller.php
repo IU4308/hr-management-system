@@ -104,7 +104,7 @@ if (
     basename($_SERVER['PHP_SELF']) === 'candidates.php'
 ) {
     if (isset($_GET['status'])) {
-        $status = $_GET['status'];
+        $status = htmlspecialchars($_GET['status']);
 
         $candidates = get_filtered_candidates($status);
     } else {
